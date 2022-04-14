@@ -41,23 +41,23 @@ img {
 
 /*Стили для index.html*/
 /*Header*/
-.page-header {
+.header {
   border-bottom: 1px solid #ececec;
   /* background-color: thistle; */
 }
-.page-header > .container {
+.header__container {
   display: flex;
   align-items: center;
   padding-top: 24px;
   padding-bottom: 25px;
 }
 
-.logo-link {
+.logo {
   text-decoration: none;
   
   margin-right: 93px;
 }
-.logo-page-web {
+.logo__web {
   color: var(--brand-blue-color);
 
   font-family: Raleway, sans-serif;
@@ -66,7 +66,7 @@ img {
   font-size: 26px;
   line-height: 1.19;
 }
-.logo-page-studio {
+.logo__studio {
   color: #000000;
 
   font-family: Raleway, sans-serif;
@@ -78,14 +78,14 @@ img {
 .site-nav {
   display: flex;
 }
-.site-nav .item {
+.site-nav__item {
   margin-right: 50px;
 }
 
-.site-nav .item:last-child {
+.site-nav__item:last-child {
   margin-right: 0;
 }
-.site-nav .link {
+.site-nav__link {
   color: var(--brand-black-color);
   text-decoration: none;
 
@@ -100,10 +100,10 @@ img {
 
   transition: color var(--animation) ;
 }
-.site-nav .link.current {
+.site-nav__link--current {
   color: var(--brand-blue-color);
 }
-.link.current::after{
+.site-nav__link--current::after{
   content: "";
   display: block;
   width: 100%;
@@ -117,8 +117,8 @@ border-radius: 2px;
   left: 0;
   
 }
-.site-nav .link:hover,
-.site-nav .link:focus {
+.site-nav__link:hover,
+.site-nav__link:focus {
   color: var(--brand-blue-color);
 }
 .contact-nav {
@@ -127,17 +127,17 @@ border-radius: 2px;
    
   
 }
-.contact-nav .item{
+.contact-nav__item{
   
   align-items: center;
- 
-}
-.contact-nav .item + .item {
-  margin-left: 50px;
   
 }
+ .contact-nav__item--right {
+  margin-left: 50px;
+  
+} 
 
-.contact-nav .link {
+.contact-nav__link {
   display: flex;
   color: var(--brand-grey-color);
   text-decoration: none;
@@ -152,17 +152,14 @@ border-radius: 2px;
  transition: color var(--animation);
   
 }
-.contact-nav .link:hover .mail-icon,
-.contact-nav .link:focus .mail-icon {
-  fill: var(--brand-blue-color);
+
+.contact-nav__link:hover,
+.contact-nav__link:focus{
+  color: var(--brand-blue-color);
   cursor: pointer;
 }
-.contact-nav .link:hover,
-.contact-nav .link:focus{
-  color: var(--brand-blue-color);
-}
 
-.mail-icon{
+.contact-nav__mail-icon{
  display: inline-block;
  
   fill: currentColor;
@@ -174,7 +171,7 @@ border-radius: 2px;
     
 }
 
-.smartphone-icon{
+.contact-nav__smartphone-icon{
   width: 10px;
   height: 16px;
   
@@ -611,6 +608,7 @@ fill: var(--background-page);
 
 .footer-nav .logo-link {
   display: inline-block;
+  text-decoration: none;
 
   padding-bottom: 20px;
   margin-right: 0;
